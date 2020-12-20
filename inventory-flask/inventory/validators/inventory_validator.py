@@ -52,7 +52,7 @@ class UpdateInventoryValidator(Form):
         validators=[validators.InputRequired(), validators.NumberRange(0, 1000000)],
         places=2,
         rounding=None)
-    quantity = IntegerField(
+    quantity = DecimalField(
         label='Quantity',
         validators=[validators.InputRequired(), validators.NumberRange(0, 10000000)])
     unit_abbreviation = StringField(
