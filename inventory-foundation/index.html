@@ -1,0 +1,71 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory System</title>
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="icons/foundation-icons.css">
+</head>
+
+<body>
+    <div class="grid-container">
+        <div class="grid-x grid-padding-x">
+            <div class="cell header-grid">
+                <h1>Inventory System</h1>
+            </div>
+        </div>
+        <div class="grid-x grid-padding-x">
+            <div class="small-12 large-4 cell">
+                <div class="input-group">
+                    <input class="input-group-field" id="search-inventory-text"
+                        placeholder="Category name, item number, or item name" type="text">
+                    <div class="input-group-button" id="search-button">
+                        <input id="search-inventory-button" type="submit" class="button" value="Search">
+                    </div>
+                </div>
+            </div>
+            <div class="small-0 large-6 cell"></div>
+            <div class="small-12 large-2 cell">
+                <a id="search-inventory-button" class="button expanded float-right secondary" href="/create-inventory.html">Create
+                    Inventory</a>
+            </div>
+        </div>
+        <div class="grid-x grid-padding-x">
+            <div id="error-bag" class="callout alert large-12 cell" data-closable>
+                <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
+        <div class="grid-x grid-margin-x">
+            <div class="large-12 cell">
+                <table id="inventoryTable" class="hover">
+                    <thead>
+                        <tr>
+                            <th>Action</th>
+                            <th>Category Name </th>
+                            <th>Item Number</th>
+                            <th>Item Name</th>
+                            <th>Item Description</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                        </tr>
+                    </thead>
+                    <tbody id="inventoryTableBody">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/what-input/dist/what-input.js"></script>
+    <script src="node_modules/foundation-sites/dist/js/foundation.js"></script>
+    <script src="node_modules/axios/dist/axios.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
