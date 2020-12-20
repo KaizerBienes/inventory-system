@@ -1,6 +1,7 @@
 from werkzeug.datastructures import MultiDict
 from flask_api import status
-from flask import Response, json
+from flask import Response
+import simplejson as json
 
 from inventory.validators.inventory_validator\
     import CreateInventoryValidator, GetInventoryValidator, SearchInventoryValidator,\
