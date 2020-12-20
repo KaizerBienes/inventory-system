@@ -1,0 +1,130 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Inventory</title>
+    <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body>
+    <div class="grid-container">
+        <div class="grid-x grid-padding-x">
+            <div class="large-12 cell header-margin-top">
+                <h1 class="text-center">Create Inventory</h1>
+            </div>
+        </div>
+        <form id="create-inventory-form" data-abide novalidate>
+            <div class="reveal" id="create-inventory-error-modal" data-reveal>
+                <h4>Error encountered while creating inventory</h4>
+                <button class="close-button" data-close aria-label="Close modal" type="button">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div data-abide-error class="alert callout" style="display: none;">
+                <p><i class="fi-alert"></i> There are some errors in your form inputs.</p>
+            </div>
+            <div class="grid-x grid-padding-x form-content">
+                <div class="large-6 cell float-center">
+                    <div class="grid-x grid-padding-x">
+                        <div class="small-3 cell">
+                            <label for="form-category-name" class="text-right middle">Category Name *</label>
+                        </div>
+                        <div class="small-9 cell">
+                            <input type="text" id="form-category-name" aria-describedby="categoryNameHelpText" required>
+                            <span class="form-error">
+                                Category name is required.
+                            </span>
+                            <p class="help-text" id="categoryNameHelpText">The category of the inventory item</p>
+                        </div>
+                        <div class="small-3 cell">
+                            <label for="form-item-number" class="text-right middle">Item Number *</label>
+                        </div>
+                        <div class="small-9 cell">
+                            <input type="text" id="form-item-number" aria-describedby="itemNumberHelpText" required>
+                            <span class="form-error">
+                                Item number is required.
+                            </span>
+                            <p class="help-text" id="itemNumberHelpText">A unique identifier for the inventory e.g.
+                                ITEM-0001</p>
+                        </div>
+                        <div class="small-3 cell">
+                            <label for="form-item-name" class="text-right middle">Item Name *</label>
+                        </div>
+                        <div class="small-9 cell">
+                            <input type="text" id="form-item-name" aria-describedby="itemNameHelpText" required>
+                            <span class="form-error">
+                                Item name is required.
+                            </span>
+                            <p class="help-text" id="itemNameHelpText">The name of the inventory item</p>
+                        </div>
+                        <div class="small-3 cell">
+                            <label for="form-description" class="text-right middle">Description</label>
+                        </div>
+                        <div class="small-9 cell">
+                            <textarea id="form-description" aria-describedby="descriptionHelpText"></textarea>
+                            <p class="help-text" id="descriptionHelpText">(Optional) Description of the inventory item
+                            </p>
+                        </div>
+                        <div class="small-3 cell">
+                            <label for="form-cost-price" class="text-right middle">Price *</label>
+                        </div>
+                        <div class="small-9 cell">
+                            <input type="number" id="form-cost-price" aria-describedby="costPriceHelpText" value="0"
+                                required pattern="number">
+                            <span class="form-error" data-form-error-on="required">
+                                Price is required.
+                            </span>
+                            <span class="form-error" data-form-error-on="pattern">
+                                Price must be a number.
+                            </span>
+                            <p class="help-text" id="costPriceHelpText">How much the item costs in pesos</p>
+                        </div>
+                        <div class="small-6 cell">
+                            <label for="form-quantity" class="text-left">Quantity *</label>
+                        </div>
+                        <div class="small-6 cell">
+                            <label for="form-unit-abbreviation" class="text-left">Unit Abbreviation *</label>
+                        </div>
+                        <div class="small-6 cell">
+                            <input type="number" id="form-quantity" aria-describedby="quantityHelpText" value="0"
+                                required pattern="number">
+                            <span class="form-error" data-form-error-on="required">
+                                Quantity is required.
+                            </span>
+                            <span class="form-error" data-form-error-on="pattern">
+                                Quantity must be a number.
+                            </span>
+                            <p class="help-text" id="quantityHelpText">The number of items on hand</p>
+                        </div>
+                        <div class="small-6 cell">
+                            <input type="text" id="form-unit-abbreviation" aria-describedby="unitAbbreviationHelpText"
+                                required>
+                            <span class="form-error">
+                                Unit abbreviation is required.
+                            </span>
+                            <p class="help-text" id="unitAbbreviationHelpText">Quantity units e.g. km, m, g, kg</p>
+                        </div>
+                        <div class="small-6 cell">
+                            <a id="cancel-submit-button" href="/" class="button secondary expanded">Cancel</a>
+                        </div>
+                        <div class="small-6 cell">
+                            <button id="submit-create-inventory-button" type="submit" class="button expanded">Create
+                                Inventory</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/what-input/dist/what-input.js"></script>
+    <script src="node_modules/foundation-sites/dist/js/foundation.js"></script>
+    <script src="node_modules/axios/dist/axios.min.js"></script>
+    <script src="js/create-inventory.js"></script>
+</body>
+
+</html>
